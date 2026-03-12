@@ -1,26 +1,52 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0b0612;
+  --foreground: #f5f2ff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-mono, ui-monospace);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display), system-ui, sans-serif;
+}
+
+.glass {
+  background: rgba(25, 16, 34, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(127, 13, 242, 0.2);
+}
+
+.grid-bg {
+  background-size: 40px 40px;
+  background-image: radial-gradient(circle, rgba(127, 13, 242, 0.1) 1px, transparent 1px);
+}
+
+.grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.03;
+  background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAy_3GP3TlRUc9eu9xgySZvQu8L4SPNB47VlQeaNZaclRxHZBIDArehGv4cRx0bPmPr22E_vzxTZLLltgX9G9zhTE2osnWuHh5p5oHsF3aZfm5cTvfzqTTqWAJWdjYRMs8QtL9sICbzGFvGBb8bJyJ7M87LNuJmbPOAtEvwKHXCAwhtCuiktnat9EKGep-zDMuwVpUdld6NroTiyMdEEsZxMIKjZ4-40JQQz0-iOoNJDolqyTroXhHtvcBLS_8XJPMTYjI_AW7IIe4);
 }
